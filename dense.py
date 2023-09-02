@@ -12,4 +12,13 @@ class Dense(Layer) :
         self.output = np.dot(self.input, self.weights) + self.bias
         return self.output
 
-    def backProp(self, err, lr) :
+    def backProp(self, outputErr, lr) :
+        inputErr = np.dot(outputErr, self.weights.T)
+        weightsErr = np.dot(self.input.T, outputErr)
+        biasErr = outputErr
+
+        # update params
+        self.weights -= lr * weightsErr
+        self.bias -= lr * biasErr
+        
+        return inputErr

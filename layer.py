@@ -6,5 +6,5 @@ class Layer :
     def fwdProp(self, input) :
         raise NotImplementedError
 
-    def backProp(self, err, lr) :
+    def backProp(self, outputErr, lr) :
         raise NotImplementedError
