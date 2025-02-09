@@ -19,7 +19,7 @@ net.addLayer(Activation(tanh, tanhPrime))
 
 # train
 net.setLoss(mse, msePrime)
-net.fit(xTrain, yTrain, epochs=1000, lr=0.1)
+net.fit(xTrain, yTrain, epochs=2000, lr=0.1)
 
 # test
 out = net.predict(xTrain)
